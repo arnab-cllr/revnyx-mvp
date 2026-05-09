@@ -95,7 +95,7 @@ export default function Dashboard() {
               <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'var(--ink-3)' }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 11, fill: 'var(--ink-3)' }} axisLine={false} tickLine={false} tickFormatter={(v) => `₹${(v/100000).toFixed(1)}L`} />
               <Tooltip
-                formatter={(v: number) => [`₹${(v/100000).toFixed(2)}L`, 'Recovered']}
+                formatter={(v: unknown) => [`₹${((v as number)/100000).toFixed(2)}L`, 'Recovered']}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid var(--border)', boxShadow: '0 4px 16px rgba(7,17,28,0.08)' }}
               />
               <Area type="monotone" dataKey="recovered" stroke="#059669" strokeWidth={2} fill="url(#recoveredGrad)" />
@@ -113,7 +113,7 @@ export default function Dashboard() {
               <XAxis dataKey="channel" tick={{ fontSize: 10, fill: 'var(--ink-3)' }} axisLine={false} tickLine={false} />
               <YAxis tick={{ fontSize: 11, fill: 'var(--ink-3)' }} axisLine={false} tickLine={false} unit="%" />
               <Tooltip
-                formatter={(v: number) => [`${v}%`, 'Success rate']}
+                formatter={(v: unknown) => [`${v}%`, 'Success rate']}
                 contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid var(--border)' }}
               />
               <Bar dataKey="successRate" fill="var(--navy)" radius={[4, 4, 0, 0]} />

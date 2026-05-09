@@ -70,7 +70,7 @@ export default function Analytics() {
             <XAxis dataKey="month" tick={{ fontSize: 11, fill: 'var(--ink-3)' }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fontSize: 11, fill: 'var(--ink-3)' }} axisLine={false} tickLine={false} tickFormatter={v => `₹${(v / 100000).toFixed(0)}L`} />
             <Tooltip
-              formatter={(v: number, name: string) => [`₹${(v / 100000).toFixed(2)}L`, name === 'recovered' ? 'Recovered' : 'Lost']}
+              formatter={(v: unknown, name: unknown) => [`₹${((v as number) / 100000).toFixed(2)}L`, name === 'recovered' ? 'Recovered' : 'Lost']}
               contentStyle={{ fontSize: 12, borderRadius: 8, border: '1px solid var(--border)' }}
             />
             <Area type="monotone" dataKey="recovered" stroke="#059669" strokeWidth={2} fill="url(#greenGrad)" />

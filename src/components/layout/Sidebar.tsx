@@ -1,10 +1,14 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard, Plug, GitBranch, FlaskConical,
-  Phone, MessageCircle, Mail, MessageSquare, BarChart2, Activity
+  Phone, MessageCircle, Mail, MessageSquare, BarChart2, Activity,
+  type LucideIcon
 } from 'lucide-react';
 
-const nav = [
+type NavChild = { label: string; to: string; icon?: LucideIcon; badge?: string };
+type NavItem = { label: string; icon: LucideIcon; to: string; children?: NavChild[] };
+
+const nav: NavItem[] = [
   { label: 'Dashboard', icon: LayoutDashboard, to: '/' },
   { label: 'Integrations', icon: Plug, to: '/connectors' },
   {
