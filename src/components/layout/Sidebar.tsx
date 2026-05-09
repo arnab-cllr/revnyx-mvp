@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom';
 import {
-  LayoutDashboard, Plug, GitBranch, FlaskConical,
+  LayoutDashboard, Plug, GitBranch, FlaskConical, Zap,
   Phone, MessageCircle, Mail, MessageSquare, BarChart2, Activity,
   type LucideIcon
 } from 'lucide-react';
@@ -11,6 +11,7 @@ type NavItem = { label: string; icon: LucideIcon; to: string; children?: NavChil
 const nav: NavItem[] = [
   { label: 'Dashboard', icon: LayoutDashboard, to: '/' },
   { label: 'Integrations', icon: Plug, to: '/connectors' },
+  { label: 'Signal Feed', icon: Zap, to: '/signals' },
   {
     label: 'Workflows', icon: GitBranch, to: '/workflows',
     children: [

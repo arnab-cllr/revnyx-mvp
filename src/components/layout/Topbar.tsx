@@ -4,6 +4,7 @@ import { Bell, ChevronRight } from 'lucide-react';
 const breadcrumbMap: Record<string, string[]> = {
   '/': ['Dashboard'],
   '/connectors': ['Integrations'],
+  '/signals':    ['Signal Feed'],
   '/workflows': ['Workflows', 'All Workflows'],
   '/workflows/ab-testing': ['Workflows', 'A/B Testing'],
   '/channels/voice': ['Channels', 'Voice AI'],

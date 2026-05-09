@@ -5,6 +5,7 @@ import Connectors from './pages/Connectors';
 import Workflows from './pages/Workflows';
 import ABTesting from './pages/ABTesting';
 import Analytics from './pages/Analytics';
+import SignalFeed from './pages/SignalFeed';
 import VoiceAI from './pages/channels/VoiceAI';
 import WhatsApp from './pages/channels/WhatsApp';
 import Email from './pages/channels/Email';
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/" element={<AppShell />}>
           <Route index element={<Dashboard />} />
           <Route path="connectors" element={<Connectors />} />
+          <Route path="signals" element={<SignalFeed />} />
           <Route path="workflows" element={<Workflows />} />
           <Route path="workflows/ab-testing" element={<ABTesting />} />
           <Route path="channels" element={<Navigate to="/channels/voice" replace />} />
