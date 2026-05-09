@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Activity, Phone, MessageCircle, Mail, MessageSquare } from 'lucide-react';
+import { Activity, Phone, MessageCircle, Mail, MessageSquare, X } from 'lucide-react';
 import feedData from '../data/signal-feed.json';
 
 type Event = typeof feedData.events[number];
@@ -18,6 +18,7 @@ const signalTypeColor: Record<string, string> = {
   'Plan Downgrade Intent': '#0B2540',
   'Renewal Due 7d':        '#059669',
   'Cold Lead >14d':        '#06B6D4',
+  'New Lead Captured':     '#0891B2',
 };
 
 const channelIcon: Record<string, React.ReactNode> = {
@@ -67,6 +68,7 @@ export default function SignalFeed() {
     return matchType && matchStatus;
   });
 
+  const hasFilter = typeFilter !== ALL || statusFilter !== ALL;
   const triggeredPct = Math.round((summary.triggeredToday / summary.totalToday) * 100);
 
   return (
@@ -167,6 +169,20 @@ export default function SignalFeed() {
               {f.label}
             </button>
           ))}
+          {hasFilter && (
+            <button
+              onClick={() => { setTypeFilter(ALL); setStatusFilter(ALL); }}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 5,
+                fontSize: 12, fontWeight: 500, padding: '4px 12px', borderRadius: 99, cursor: 'pointer',
+                background: 'var(--red-light)', color: 'var(--red)',
+                border: '1px solid var(--red-light)', fontFamily: 'var(--font-body)',
+                marginLeft: 4,
+              }}
+            >
+              <X size={11} /> Clear filters
+            </button>
+          )}
           <span style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--ink-3)' }}>
             Showing <strong>{filtered.length}</strong> of {events.length} recent events
           </span>

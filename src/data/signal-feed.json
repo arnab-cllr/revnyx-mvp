@@ -1,7 +1,7 @@
 {
   "summary": {
-    "totalToday": 4206,
-    "triggeredToday": 3891,
+    "totalToday": 4377,
+    "triggeredToday": 4041,
     "ignoredDuplicate": 187,
     "ignoredThreshold": 128,
     "avgLatencyMs": 1740,
@@ -13,9 +13,40 @@
     { "type": "No Login 7d",           "count": 723,  "color": "#7C3AED" },
     { "type": "Plan Downgrade Intent", "count": 318,  "color": "#0B2540" },
     { "type": "Renewal Due 7d",        "count": 614,  "color": "#059669" },
-    { "type": "Cold Lead >14d",        "count": 399,  "color": "#06B6D4" }
+    { "type": "Cold Lead >14d",        "count": 399,  "color": "#06B6D4" },
+    { "type": "New Lead Captured",      "count": 171,  "color": "#0891B2" }
   ],
   "events": [
+    {
+      "id": "evt-5523",
+      "timestamp": "19:08:52",
+      "signalType": "New Lead Captured",
+      "source": "Asianet CRM",
+      "subscriberId": "LEAD-10241",
+      "subscriberName": "Harish Menon",
+      "segment": "Prospect",
+      "planCode": "—",
+      "signalValue": "Form submit — FBB-999 interest",
+      "workflowTriggered": "Cold Lead Conversion",
+      "status": "triggered",
+      "latencyMs": 1290,
+      "channel": "Voice AI"
+    },
+    {
+      "id": "evt-5522",
+      "timestamp": "19:08:47",
+      "signalType": "New Lead Captured",
+      "source": "Asianet CRM",
+      "subscriberId": "LEAD-10240",
+      "subscriberName": "Sindhu Pillai",
+      "segment": "Prospect",
+      "planCode": "—",
+      "signalValue": "Inbound call inquiry — FBB-599",
+      "workflowTriggered": "Cold Lead Conversion",
+      "status": "triggered",
+      "latencyMs": 1110,
+      "channel": "WhatsApp"
+    },
     {
       "id": "evt-5521",
       "timestamp": "19:08:41",
