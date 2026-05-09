@@ -1,0 +1,100 @@
+{
+  "tests": [
+    {
+      "id": "ab-1",
+      "name": "Churn Call — Opening Script",
+      "workflow": "Churn Prevention",
+      "status": "running",
+      "startDate": "May 1, 2026",
+      "sampleSize": 1200,
+      "variants": [
+        {
+          "id": "A",
+          "label": "Variant A — Value-led opener",
+          "description": "Opens with current plan benefits before raising churn risk",
+          "traffic": 50,
+          "interventions": 604,
+          "successRate": 52,
+          "avgCallDuration": "2m 18s",
+          "revenueRecovered": "₹3.8L"
+        },
+        {
+          "id": "B",
+          "label": "Variant B — Risk-led opener",
+          "description": "Opens by flagging potential service disruption directly",
+          "traffic": 50,
+          "interventions": 596,
+          "successRate": 44,
+          "avgCallDuration": "1m 52s",
+          "revenueRecovered": "₹3.1L"
+        }
+      ],
+      "winner": "A",
+      "confidence": "94%"
+    },
+    {
+      "id": "ab-2",
+      "name": "Payment Recovery — Channel Order",
+      "workflow": "Payment Recovery",
+      "status": "running",
+      "startDate": "May 3, 2026",
+      "sampleSize": 800,
+      "variants": [
+        {
+          "id": "A",
+          "label": "Variant A — Call first",
+          "description": "Voice AI call → WhatsApp payment link if no answer",
+          "traffic": 60,
+          "interventions": 480,
+          "successRate": 21,
+          "avgCallDuration": "1m 44s",
+          "revenueRecovered": "₹1.2L"
+        },
+        {
+          "id": "B",
+          "label": "Variant B — WhatsApp first",
+          "description": "WhatsApp payment link → Voice AI call after 2hr",
+          "traffic": 40,
+          "interventions": 320,
+          "successRate": 16,
+          "avgCallDuration": "—",
+          "revenueRecovered": "₹0.7L"
+        }
+      ],
+      "winner": null,
+      "confidence": "71%"
+    },
+    {
+      "id": "ab-3",
+      "name": "Cold Lead — Message Tone",
+      "workflow": "Cold Lead Conversion",
+      "status": "completed",
+      "startDate": "Apr 15, 2026",
+      "sampleSize": 600,
+      "variants": [
+        {
+          "id": "A",
+          "label": "Variant A — Consultative tone",
+          "description": "Focuses on understanding needs, offers a free consultation",
+          "traffic": 50,
+          "interventions": 300,
+          "successRate": 26,
+          "avgCallDuration": "3m 02s",
+          "revenueRecovered": "₹0.9L"
+        },
+        {
+          "id": "B",
+          "label": "Variant B — Urgency tone",
+          "description": "Highlights limited offer window and competitor risk",
+          "traffic": 50,
+          "interventions": 300,
+          "successRate": 18,
+          "avgCallDuration": "1m 28s",
+          "revenueRecovered": "₹0.6L"
+        }
+      ],
+      "winner": "A",
+      "confidence": "98%"
+    }
+  ]
+}

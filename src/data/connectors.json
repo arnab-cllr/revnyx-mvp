@@ -1,0 +1,126 @@
+{
+  "account": {
+    "name": "Asianet Broadband",
+    "vertical": "Telecom / Broadband",
+    "tier": "Enterprise"
+  },
+  "sections": [
+    {
+      "id": "section-sdk",
+      "label": "Revnyx SDK",
+      "description": "SDK deployed on Asianet's infrastructure. Monitors real-time signal ingestion from internal systems.",
+      "connectors": [
+        {
+          "id": "sdk-1",
+          "name": "Billing & Subscriber System",
+          "sourceName": "Asianet BSS",
+          "category": "sdk",
+          "description": "SDK listener on BSS — captures payment failure events, plan changes, and billing cycle completions in real time",
+          "status": "active",
+          "lastEvent": "18 sec ago",
+          "eventsToday": 1240,
+          "sdkVersion": "v2.3.1",
+          "fields": ["subscriber_id", "payment_status", "plan_code", "billing_cycle", "outstanding_amount"]
+        },
+        {
+          "id": "sdk-2",
+          "name": "Network & Provisioning System",
+          "sourceName": "Asianet OSS",
+          "category": "sdk",
+          "description": "SDK listener on OSS — captures usage drop signals, service quality events, and device activity changes",
+          "status": "active",
+          "lastEvent": "42 sec ago",
+          "eventsToday": 562,
+          "sdkVersion": "v2.3.1",
+          "fields": ["subscriber_id", "usage_gb_30d", "usage_gb_7d", "avg_speed_mbps", "outage_count"]
+        },
+        {
+          "id": "sdk-3",
+          "name": "Product Analytics Layer",
+          "sourceName": "Asianet App Events",
+          "category": "sdk",
+          "description": "SDK webhook bridge — fires on no-login triggers, feature drop-off, and custom churn signals from Asianet's product layer",
+          "status": "active",
+          "lastEvent": "Just now",
+          "eventsToday": 723,
+          "sdkVersion": "v2.3.1",
+          "fields": ["event_type", "subscriber_id", "signal_value", "signal_threshold", "timestamp"]
+        }
+      ]
+    },
+    {
+      "id": "section-crm",
+      "label": "CRM Integration",
+      "description": "Two-way sync with Asianet's CRM — Revnyx reads customer context and writes intervention outcomes back.",
+      "connectors": [
+        {
+          "id": "crm-1",
+          "name": "Asianet CRM",
+          "sourceName": "Custom CRM",
+          "category": "crm",
+          "description": "Pulls subscriber profiles, contact details, lifetime value, and churn scores. Revnyx writes every intervention outcome back automatically.",
+          "status": "active",
+          "lastEvent": "4 min ago",
+          "eventsToday": 874,
+          "sdkVersion": null,
+          "fields": ["customer_id", "full_name", "phone", "email", "segment", "lifetime_value", "churn_score", "intervention_outcome"]
+        }
+      ]
+    },
+    {
+      "id": "section-channels",
+      "label": "Channel APIs",
+      "description": "Outbound execution pipes — Revnyx triggers interventions through these APIs when a workflow fires.",
+      "connectors": [
+        {
+          "id": "ch-1",
+          "name": "WhatsApp Business API",
+          "sourceName": "Meta",
+          "category": "channel",
+          "description": "Asianet's verified WhatsApp Business account — used for sending intervention messages, payment links, and recovery offers",
+          "status": "active",
+          "lastEvent": "Just now",
+          "eventsToday": 318,
+          "sdkVersion": null,
+          "fields": ["wa_phone_number", "template_id", "delivery_status", "read_status", "reply_text"]
+        },
+        {
+          "id": "ch-2",
+          "name": "SMS Gateway",
+          "sourceName": "Twilio",
+          "category": "channel",
+          "description": "SMS delivery for short-form trigger messages, payment links, and callback prompts",
+          "status": "active",
+          "lastEvent": "8 min ago",
+          "eventsToday": 74,
+          "sdkVersion": null,
+          "fields": ["to_number", "message_body", "delivery_status", "clicked"]
+        },
+        {
+          "id": "ch-3",
+          "name": "Email Service",
+          "sourceName": "SendGrid",
+          "category": "channel",
+          "description": "Transactional email delivery for intervention templates with personalisation tokens and open/click tracking",
+          "status": "active",
+          "lastEvent": "11 min ago",
+          "eventsToday": 280,
+          "sdkVersion": null,
+          "fields": ["to_email", "template_id", "open_status", "click_status", "bounce"]
+        },
+        {
+          "id": "ch-4",
+          "name": "Voice AI Engine",
+          "sourceName": "Revnyx Voice",
+          "category": "channel",
+          "description": "Revnyx's LLM-powered voice agent — handles outbound and inbound calls with STT + TTS and outcome capture",
+          "status": "active",
+          "lastEvent": "Just now",
+          "eventsToday": 2714,
+          "sdkVersion": null,
+          "fields": ["call_id", "subscriber_id", "call_outcome", "duration_sec", "intent_captured"]
+        }
+      ]
+    }
+  ]
+}

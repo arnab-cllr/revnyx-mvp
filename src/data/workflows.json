@@ -1,0 +1,116 @@
+{
+  "workflows": [
+    {
+      "id": "wf-1",
+      "name": "Churn Prevention",
+      "useCase": "Churn Prevention",
+      "status": "active",
+      "triggers": 842,
+      "recoveryRate": "44%",
+      "lastRun": "3 min ago",
+      "channels": ["Voice AI", "WhatsApp"],
+      "nodes": [
+        { "id": "n1", "type": "trigger", "label": "Usage Drop Detected", "x": 80, "y": 160 },
+        { "id": "n2", "type": "action", "label": "Voice AI Call", "channel": "voice", "x": 300, "y": 80 },
+        { "id": "n3", "type": "condition", "label": "Call Picked Up?", "x": 520, "y": 80 },
+        { "id": "n4", "type": "action", "label": "WhatsApp Message", "channel": "whatsapp", "x": 300, "y": 260 },
+        { "id": "n5", "type": "outcome", "label": "Churn Reverted", "x": 740, "y": 40 },
+        { "id": "n6", "type": "outcome", "label": "Escalated to Agent", "x": 740, "y": 140 },
+        { "id": "n7", "type": "outcome", "label": "Resolved via WA", "x": 520, "y": 300 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2" }, { "from": "n1", "to": "n4" },
+        { "from": "n2", "to": "n3" }, { "from": "n3", "to": "n5" },
+        { "from": "n3", "to": "n6" }, { "from": "n4", "to": "n7" }
+      ]
+    },
+    {
+      "id": "wf-2",
+      "name": "Payment Recovery",
+      "useCase": "Payment Recovery",
+      "status": "active",
+      "triggers": 1204,
+      "recoveryRate": "18%",
+      "lastRun": "1 min ago",
+      "channels": ["Voice AI", "WhatsApp", "Email"],
+      "nodes": [
+        { "id": "n1", "type": "trigger", "label": "Payment Failed", "x": 80, "y": 160 },
+        { "id": "n2", "type": "action", "label": "Voice AI Call", "channel": "voice", "x": 300, "y": 80 },
+        { "id": "n3", "type": "condition", "label": "Payment Made?", "x": 520, "y": 80 },
+        { "id": "n4", "type": "action", "label": "WhatsApp Payment Link", "channel": "whatsapp", "x": 300, "y": 260 },
+        { "id": "n5", "type": "action", "label": "Email Reminder", "channel": "email", "x": 520, "y": 300 },
+        { "id": "n6", "type": "outcome", "label": "Payment Recovered", "x": 740, "y": 40 },
+        { "id": "n7", "type": "outcome", "label": "Pending Follow-up", "x": 740, "y": 200 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2" }, { "from": "n2", "to": "n3" },
+        { "from": "n3", "to": "n6" }, { "from": "n3", "to": "n4" },
+        { "from": "n4", "to": "n5" }, { "from": "n5", "to": "n7" }
+      ]
+    },
+    {
+      "id": "wf-3",
+      "name": "Cold Lead Conversion",
+      "useCase": "Lead Conversion",
+      "status": "active",
+      "triggers": 318,
+      "recoveryRate": "22%",
+      "lastRun": "8 min ago",
+      "channels": ["Voice AI", "WhatsApp", "Email"],
+      "nodes": [
+        { "id": "n1", "type": "trigger", "label": "Lead Disengaged (7d)", "x": 80, "y": 160 },
+        { "id": "n2", "type": "action", "label": "Voice AI Call", "channel": "voice", "x": 300, "y": 80 },
+        { "id": "n3", "type": "action", "label": "WhatsApp Nudge", "channel": "whatsapp", "x": 300, "y": 260 },
+        { "id": "n4", "type": "condition", "label": "Responded?", "x": 520, "y": 160 },
+        { "id": "n5", "type": "outcome", "label": "Demo Booked", "x": 740, "y": 80 },
+        { "id": "n6", "type": "outcome", "label": "Unqualified", "x": 740, "y": 260 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2" }, { "from": "n1", "to": "n3" },
+        { "from": "n2", "to": "n4" }, { "from": "n3", "to": "n4" },
+        { "from": "n4", "to": "n5" }, { "from": "n4", "to": "n6" }
+      ]
+    },
+    {
+      "id": "wf-4",
+      "name": "Subscription Renewal",
+      "useCase": "Renewal",
+      "status": "paused",
+      "triggers": 190,
+      "recoveryRate": "61%",
+      "lastRun": "2 days ago",
+      "channels": ["Email", "SMS"],
+      "nodes": [
+        { "id": "n1", "type": "trigger", "label": "Renewal in 7 Days", "x": 80, "y": 160 },
+        { "id": "n2", "type": "action", "label": "Email Reminder", "channel": "email", "x": 300, "y": 80 },
+        { "id": "n3", "type": "action", "label": "SMS Reminder", "channel": "sms", "x": 300, "y": 260 },
+        { "id": "n4", "type": "outcome", "label": "Renewed", "x": 520, "y": 80 },
+        { "id": "n5", "type": "outcome", "label": "Lapsed", "x": 520, "y": 260 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2" }, { "from": "n1", "to": "n3" },
+        { "from": "n2", "to": "n4" }, { "from": "n3", "to": "n5" }
+      ]
+    },
+    {
+      "id": "wf-5",
+      "name": "Win-Back Campaign",
+      "useCase": "Win-Back",
+      "status": "draft",
+      "triggers": 0,
+      "recoveryRate": "—",
+      "lastRun": "Never",
+      "channels": ["WhatsApp", "Email"],
+      "nodes": [
+        { "id": "n1", "type": "trigger", "label": "Churned 30d Ago", "x": 80, "y": 160 },
+        { "id": "n2", "type": "action", "label": "WhatsApp Win-Back", "channel": "whatsapp", "x": 300, "y": 80 },
+        { "id": "n3", "type": "action", "label": "Email Offer", "channel": "email", "x": 300, "y": 260 },
+        { "id": "n4", "type": "outcome", "label": "Re-activated", "x": 520, "y": 160 }
+      ],
+      "edges": [
+        { "from": "n1", "to": "n2" }, { "from": "n1", "to": "n3" },
+        { "from": "n2", "to": "n4" }, { "from": "n3", "to": "n4" }
+      ]
+    }
+  ]
+}

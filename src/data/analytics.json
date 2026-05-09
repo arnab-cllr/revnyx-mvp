@@ -1,0 +1,34 @@
+{
+  "kpis": {
+    "revenueRecovered": "₹18.4L",
+    "revenueRecoveredRaw": 1840000,
+    "interventionsTriggered": 2714,
+    "churnsReverted": 34,
+    "paymentRecoveryRate": "18%",
+    "connectRate": "49.3%",
+    "avgLatencyMs": 1800,
+    "activeWorkflows": 7
+  },
+  "revenueChart": [
+    { "month": "Nov", "recovered": 420000, "lost": 180000 },
+    { "month": "Dec", "recovered": 610000, "lost": 220000 },
+    { "month": "Jan", "recovered": 780000, "lost": 190000 },
+    { "month": "Feb", "recovered": 920000, "lost": 210000 },
+    { "month": "Mar", "recovered": 1240000, "lost": 170000 },
+    { "month": "Apr", "recovered": 1580000, "lost": 155000 },
+    { "month": "May", "recovered": 1840000, "lost": 140000 }
+  ],
+  "channelPerformance": [
+    { "channel": "Voice AI", "interventions": 1820, "successRate": 49, "color": "#0B2540" },
+    { "channel": "WhatsApp", "interventions": 540, "successRate": 31, "color": "#25D366" },
+    { "channel": "Email", "interventions": 280, "successRate": 18, "color": "#D97706" },
+    { "channel": "SMS", "interventions": 74, "successRate": 12, "color": "#7C3AED" }
+  ],
+  "funnelData": [
+    { "stage": "Signals Detected", "count": 2714 },
+    { "stage": "Workflows Triggered", "count": 2601 },
+    { "stage": "First Contact Made", "count": 1338 },
+    { "stage": "Engaged", "count": 782 },
+    { "stage": "Resolved / Recovered", "count": 489 }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "threads": [
+    {
+      "id": "wa-1",
+      "customer": "Ramesh K.",
+      "phone": "+91 98XXX XXXXX",
+      "useCase": "Payment Recovery",
+      "status": "resolved",
+      "timestamp": "Today, 2:14 PM",
+      "messages": [
+        { "from": "agent", "text": "Hi Ramesh 👋 This is Revnyx Agent reaching out on behalf of ClearTax. We noticed your ₹4,999 invoice payment is 3 days overdue.", "time": "2:14 PM" },
+        { "from": "customer", "text": "Oh yes I forgot, can you send me the link?", "time": "2:15 PM" },
+        { "from": "agent", "text": "Sure! Here's your secure payment link valid for 24 hours: pay.cleartax.in/inv-2841 💳", "time": "2:15 PM" },
+        { "from": "customer", "text": "Done! Paid now.", "time": "2:18 PM" },
+        { "from": "agent", "text": "✅ Payment confirmed! Your invoice is now cleared. Thank you, Ramesh!", "time": "2:18 PM" }
+      ]
+    },
+    {
+      "id": "wa-2",
+      "customer": "Priya S.",
+      "phone": "+91 91XXX XXXXX",
+      "useCase": "Churn Prevention",
+      "status": "active",
+      "timestamp": "Today, 11:42 AM",
+      "messages": [
+        { "from": "agent", "text": "Hi Priya, we noticed your Asianet broadband usage has dropped significantly over the past 2 weeks. Is everything okay with your connection?", "time": "11:42 AM" },
+        { "from": "customer", "text": "Speeds have been slow lately tbh", "time": "11:45 AM" },
+        { "from": "agent", "text": "I'm sorry to hear that. Our tech team has flagged an issue in your area — it's being resolved by tonight. As a courtesy, we'd like to offer you 10GB bonus data. Shall I apply it?", "time": "11:45 AM" },
+        { "from": "customer", "text": "Yes please!", "time": "11:47 AM" },
+        { "from": "agent", "text": "Done! 10GB bonus data added to your account 🎁 You'll receive an SMS confirmation shortly.", "time": "11:47 AM" }
+      ]
+    },
+    {
+      "id": "wa-3",
+      "customer": "Arjun M.",
+      "phone": "+91 77XXX XXXXX",
+      "useCase": "Cold Lead Conversion",
+      "status": "pending",
+      "timestamp": "Yesterday, 4:30 PM",
+      "messages": [
+        { "from": "agent", "text": "Hi Arjun! You explored edForce's Data Analytics course last week. Many learners from your profile land roles at ₹8–12L within 6 months. Would you like to connect with our advisor?", "time": "4:30 PM" },
+        { "from": "customer", "text": "Let me think about it", "time": "6:12 PM" },
+        { "from": "agent", "text": "Of course! Worth noting: the next cohort starts May 15 and early joiners get a ₹5,000 scholarship. I can hold a seat for you until tomorrow — want me to?", "time": "6:12 PM" }
+      ]
+    }
+  ]
+}
